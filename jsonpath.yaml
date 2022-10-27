@@ -15,3 +15,8 @@ kubectl get po -o custom-columns="Name:metadata.name,Memory-limit:spec.container
 Check which nodes are ready
 JSONPATH='{range .items[*]}{@.metadata.name}:{range @.status.conditions[*]}{@.type}={@.status};{end}{end}' \
  && kubectl get nodes -o jsonpath="$JSONPATH" | grep "Ready=True"
+ 
+ 
+Node IP Addresses 
+kubectl get nodes  -o jsonpath='{.items[*].status.addresses[]}'
+
