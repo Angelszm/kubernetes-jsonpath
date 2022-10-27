@@ -20,3 +20,17 @@ JSONPATH='{range .items[*]}{@.metadata.name}:{range @.status.conditions[*]}{@.ty
 Node IP Addresses 
 kubectl get nodes  -o jsonpath='{.items[*].status.addresses[]}'
 
+
+
+
+
+
+
+
+
+Outputs
+#Get Current Currents ( Display the current-context)
+kubectl config current-context
+
+# Get Contexts from the cluster
+kubectl config get-contexts
